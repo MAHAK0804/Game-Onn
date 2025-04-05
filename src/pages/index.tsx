@@ -1,4 +1,5 @@
 // import { Geist, Geist_Mono } from "next/font/google";
+import BasketBallPlayer from "@/components/BasketBallPlayer";
 import FootballText from "@/components/FootballText";
 
 // const geistSans = Geist({
@@ -13,9 +14,13 @@ import FootballText from "@/components/FootballText";
 
 export default function Home() {
   return (
-    <div>
-      {/* <p>Hi</p> */}
-      <FootballText />
+    <div className="flex-row">
+      <div className="relative z-0">
+        <FootballText />
+      </div>
+      <div className="relative z-10">
+        <BasketBallPlayer />
+      </div>
     </div>
   );
 }
