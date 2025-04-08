@@ -1,19 +1,22 @@
 import Image from "next/image";
 import React from "react";
-import BasketBall from "../assets/images/basketball_sport_icon_in_minimalist_3d_render_2 1.png";
-import Text from "../assets/images/Top scorer to the final match.png";
+// import BasketBall from "../../public/assets/basketball_sport_icon_in_minimalist_3d_render_2 1.png";
+import Text from "../../public/assets/text.png";
 
 export default function FootballText() {
   return (
-    <div className="relative w-full max-w-[700px] h-auto aspect-[7/6] mx-auto">
+    <div
+      className="bg-[url(/assets/bgImg.png)] bg-cover bg-center relative w-full max-w-[700px] 
+    h-auto aspect-[7/6] mx-auto"
+    >
       {/* Basketball Image Background */}
-      <Image
+      {/* <Image
         src={BasketBall}
         alt="Basketball"
         fill
         className="absolute object-contain z-0"
         sizes="(max-width: 768px) 100vw, 700px"
-      />
+      /> */}
 
       {/* Overlay Text Image */}
       <Image

@@ -2,7 +2,7 @@ import { headerLinks } from "@/constants/routes";
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import Sports from "../assets/images/Sport News.png";
+import Sports from "../../public/assets/sportNews.png";
 // import { FaBars, FaTimes } from "react-icons/fa"; // Add icons
 
 const Header = () => {

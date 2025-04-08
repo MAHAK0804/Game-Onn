@@ -1,8 +1,8 @@
 import ImageLabels from "@/elements/ImageLabels";
 import LabelText from "@/elements/LabelText";
 import React from "react";
-import PlayerImage from "../assets/images/beautiful-young-african-woman-sports-clothing-running-against-gray-background 1.png";
-import FastAcc from "../assets/images/fastaccelerating-race-car-formula-one-racing-amid-sunset-generative-ai 1.png";
+import PlayerImage from "../../public/assets/runnerPlayer.png";
+import FastAcc from "../../public/assets/fastAcc.png";
 
 export default function TodayImage() {
   return (

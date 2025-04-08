@@ -1,8 +1,10 @@
 import BasketBallPlayer from "@/components/BasketBallPlayer";
 import FootballText from "@/components/FootballText";
 import Image from "next/image";
-import Player from "../assets/images/basketball-player-action-sunset 1.png";
+import Player from "../../public/assets/basketPlayer.png";
 import TodayImage from "@/components/TodayImage";
+import Category from "@/components/Category";
+import Footer from "@/layouts/Footer";
 
 export default function Home() {
   return (
@@ -40,6 +42,8 @@ export default function Home() {
           <TodayImage />
         </div>
       </div>
+      <Category />
+      <Footer />
     </div>
   );
 }
