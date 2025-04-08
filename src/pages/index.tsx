@@ -1,25 +1,44 @@
-// import { Geist, Geist_Mono } from "next/font/google";
 import BasketBallPlayer from "@/components/BasketBallPlayer";
 import FootballText from "@/components/FootballText";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import Image from "next/image";
+import Player from "../assets/images/basketball-player-action-sunset 1.png";
+import TodayImage from "@/components/TodayImage";
 
 export default function Home() {
   return (
-    <div className="flex-row">
-      <div className="relative z-0">
-        <FootballText />
-      </div>
-      <div className="relative z-10">
-        <BasketBallPlayer />
+    <div className="w-full pt-14">
+      <div className="flex flex-col lg:flex-row w-[90%] m-auto min-h-screen sm:flex-wrap">
+        {/* Left Section */}
+        <div className="flex flex-col w-full lg:w-2/3 h-auto lg:h-full">
+          {/* Text Area */}
+          <div className="w-full h-auto lg:h-2/3 lg:ml-[-80px]">
+            <FootballText />
+          </div>
+
+          {/* Player Name/Info */}
+          <div className="w-full ml-auto h-auto lg:h-1/3">
+            <BasketBallPlayer />
+          </div>
+
+          {/* Player Image Positioned */}
+          <div
+            className="relative lg:absolute z-20 w-full max-w-[600px] flex justify-center mx-auto 
+                      lg:top-[190px] lg:left-[480px] lg:w-[800px]"
+          >
+            <Image
+              src={Player}
+              width={600}
+              height={850}
+              alt="Basketball Player"
+              className="object-contain max-w-full h-auto"
+            />
+          </div>
+        </div>
+
+        {/* Right Side (TodayImage) */}
+        <div className="w-full lg:w-1/3 md:pl-[130px] mt-10 lg:mt-0">
+          <TodayImage />
+        </div>
       </div>
     </div>
   );

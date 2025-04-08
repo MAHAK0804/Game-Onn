@@ -5,23 +5,33 @@ import Text from "../assets/images/Top scorer to the final match.png";
 
 export default function FootballText() {
   return (
-    <>
-      <div>
-        <Image
-          src={BasketBall}
-          alt="Picture"
-          width={500}
-          height={500}
-          className="absolute z-0 left-0 top-0"
-        />
-        <Image
-          src={Text}
-          alt="Text"
-          width={370}
-          height={370}
-          className="absolute z-10 top-20 left-25"
-        />
-      </div>
-    </>
+    <div className="relative w-full max-w-[700px] h-auto aspect-[7/6] mx-auto">
+      {/* Basketball Image Background */}
+      <Image
+        src={BasketBall}
+        alt="Basketball"
+        fill
+        className="absolute object-contain z-0"
+        sizes="(max-width: 768px) 100vw, 700px"
+      />
+
+      {/* Overlay Text Image */}
+      <Image
+        src={Text}
+        alt="Top scorer text"
+        width={500}
+        height={300}
+        className="
+      absolute z-10
+      top-[80px] left-1/2 -translate-x-1/2 w-[90%]
+
+      sm:top-[100px] sm:w-[400px]
+
+      md:top-[120px] md:w-[450px]
+
+      lg:top-[130px] lg:left-[140px] lg:translate-x-0 lg:w-[500px]
+    "
+      />
+    </div>
   );
 }
