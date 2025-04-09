@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ImageLabels({ img, text, details }: IImageLabels) {
   return (
-    <div className="w-[300px] md:w-[340px] h-[200px] md:h-[220px] rounded-xl relative overflow-hidden shadow-md mb-6">
+    <div className="w-[200px] md:w-[250px] h-[200px] md:h-[220px] rounded-xl relative overflow-hidden shadow-md mb-6">
       {/* Background Image */}
       <Image
         src={img}

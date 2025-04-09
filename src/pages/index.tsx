@@ -4,36 +4,39 @@ import Image from "next/image";
 import Player from "../../public/assets/basketPlayer.png";
 import TodayImage from "@/components/TodayImage";
 import Category from "@/components/Category";
+import venunes from "../../public/assets/TrendingNews.png";
+import about from "../../public/assets/Aboutus.png";
 import Footer from "@/layouts/Footer";
 
 export default function Home() {
   return (
     <div className="w-full pt-14">
+      {/* Top Section */}
       <div className="flex flex-col lg:flex-row w-[90%] m-auto min-h-screen sm:flex-wrap">
         {/* Left Section */}
         <div className="flex flex-col w-full lg:w-2/3 h-auto lg:h-full">
           {/* Text Area */}
-          <div className="w-full h-auto lg:h-2/3 lg:ml-[-80px]">
+          <div className="w-full h-auto lg:h-3/4 lg:ml-[-80px]">
             <FootballText />
           </div>
 
           {/* Player Name/Info */}
-          <div className="w-full ml-auto h-auto lg:h-1/3">
+          <div className="w-full ml-auto h-auto lg:h-1/4">
             <BasketBallPlayer />
-          </div>
 
-          {/* Player Image Positioned */}
-          <div
-            className="relative lg:absolute z-20 w-full max-w-[600px] flex justify-center mx-auto 
+            {/* Player Image Positioned */}
+            <div
+              className="relative lg:absolute z-20 w-full max-w-[600px] flex justify-center mx-auto 
                       lg:top-[190px] lg:left-[480px] lg:w-[800px]"
-          >
-            <Image
-              src={Player}
-              width={600}
-              height={850}
-              alt="Basketball Player"
-              className="object-contain max-w-full h-auto"
-            />
+            >
+              <Image
+                src={Player}
+                width={600}
+                height={850}
+                alt="Basketball Player"
+                className="object-contain max-w-full h-auto"
+              />
+            </div>
           </div>
         </div>
 
@@ -42,7 +45,17 @@ export default function Home() {
           <TodayImage />
         </div>
       </div>
+
+      {/* Category Section */}
       <Category />
+
+      {/* Venunes */}
+      <Image src={venunes} alt="venunes" className="w-[80%] m-auto mt-10" />
+
+      {/* About us */}
+      <Image src={about} alt="venunes" className="w-[80%] m-auto mt-10" />
+
+      {/* Footer */}
       <Footer />
     </div>
   );

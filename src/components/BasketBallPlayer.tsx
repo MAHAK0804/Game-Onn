@@ -3,7 +3,7 @@ import ContinueBtn from "@/elements/ContinueBtn";
 
 export default function BasketBallPlayer() {
   return (
-    <div className="relative flex flex-col items-center justify-center gap-6 px-4 py-8">
+    <div>
       {/* Text Section */}
       <div
         className="
