@@ -4,6 +4,7 @@ import VenueGame from "@/elements/VenueGame";
 import VenueHost from "@/elements/VenueHost";
 import Image from "next/image";
 import React from "react";
+import ContinueBtn from "@/elements/ContinueBtn";
 
 export default function Venues() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,14 +25,18 @@ export default function Venues() {
   const visibleVenues = venues.slice(currentIndex, currentIndex + visibleCount);
 
   return (
-    <div className="w-[80%] m-auto">
-      <h4 className="text-[28px] mb-5">Venues</h4>
+    <div className="w-[90%] m-auto">
+      <h4 className="text-[28px] bg-gradient-to-r from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text font-bold">
+        Venues
+      </h4>
+      <div className="bg-gradient-to-r from-[#262626] to-[#B8C2CE] h-0.5 w-23 lg:ml-0  rounded-md mb-4"></div>
+
       <div className="mb-2 flex flex-col justify-between items-center">
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-6">
           {visibleVenues.map((venue, index) => (
             <div
               key={index}
-              className="lg:w-[32%] sm:w-[48%] w-full relative overflow-hidden"
+              className="lg:w-[32%] sm:w-[48%] w-full relative rounded-2xl mb-5 shadow-xl border border-gray-50 overflow-hidden "
             >
               <Image
                 src={venue.img}
@@ -57,16 +62,16 @@ export default function Venues() {
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+            className=" py-1 rounded-2xl disabled:opacity-50 cursor-pointer"
           >
-            Prev
+            <ContinueBtn title="Prev" />
           </button>
           <button
             onClick={nextSlide}
             disabled={currentIndex + visibleCount >= venues.length}
-            className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+            className=" py-1 rounded-4xl disabled:opacity-50 cursor-pointer"
           >
-            Next
+            <ContinueBtn title="Next" />
           </button>
         </div>
       </div>

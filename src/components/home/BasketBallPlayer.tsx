@@ -7,13 +7,13 @@ export default function BasketBallPlayer() {
       {/* Text Section */}
       <div
         className="
-      w-full max-w-md px-4
+      px-4
       sm:w-[80%] 
       md:w-[80%] md:ml-auto 
-      lg:w-[40%] lg:ml-auto lg:mt-0
+      lg:w-[45%] lg:ml-auto
     "
       >
-        <p className="text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed">
+        <p className="text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed font-sans:DM">
           The EuroLeague Finals Top Scorer is the individual award for the
           player that gained the highest points in the EuroLeague Finals.
         </p>

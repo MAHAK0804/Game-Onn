@@ -17,7 +17,9 @@ export default function CategoryFrontSide({ categoryImg }: IBackSide) {
         src={categoryImg}
         alt="soccer"
         fill
-        className="object-fill rounded-xl w-full sm:w-full md:w-[48%] lg:w-[24%]"
+        width={0}
+        height={0}
+        className="object-cover rounded-xl w-full sm:w-full md:w-[48%] lg:w-[24%]"
       />
     </>
   );

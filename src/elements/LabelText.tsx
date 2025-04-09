@@ -3,8 +3,11 @@ import React from "react";
 
 export default function LabelText({ text }: ILabelText) {
   return (
-    <div className="bg-gray-200 p-2 w-25 rounded-md text-gray-400 text-[20px] text-center md:m-auto lg:ml-8 lg:mt-15 mb-6">
-      {text}
-    </div>
+    <>
+      <h3 className="bg-gradient-to-r from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text text-md font-bold text-start md:m-auto lg:ml-8  lg:mt-15 lg:mb-2 uppercase">
+        {text}
+      </h3>
+      <div className="bg-gradient-to-r from-[#262626] to-[#B8C2CE] h-0.5 w-23 lg:ml-8  rounded-md mb-4"></div>
+    </>
   );
 }

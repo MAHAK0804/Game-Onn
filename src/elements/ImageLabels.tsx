@@ -4,12 +4,14 @@ import React from "react";
 
 export default function ImageLabels({ img, text, details }: IImageLabels) {
   return (
-    <div className="w-[200px] md:w-[250px] h-[200px] md:h-[220px] rounded-xl relative overflow-hidden shadow-md mb-6">
+    <div className="w-[300px] md:w-[250px] h-[200px] md:h-[220px] rounded-xl relative overflow-hidden shadow-md mb-6">
       {/* Background Image */}
       <Image
         src={img}
         alt="pic"
         fill
+        width={0}
+        height={0}
         className="absolute z-0 object-cover"
         sizes="(max-width: 768px) 90vw, 340px"
       />
