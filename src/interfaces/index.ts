@@ -18,7 +18,10 @@ export interface IContunieBtn {
 export interface IBackSide {
   categoryImg: StaticImageData | string;
 }
-
-export interface ICategoryText {
-  text: string;
+export interface IVenueHost {
+  img: StaticImageData | string;
+  name: string;
+  date: string;
+  heading: string;
+  details: string;
 }

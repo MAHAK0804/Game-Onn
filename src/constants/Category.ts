@@ -4,8 +4,8 @@ import sportCar from "../../public/assets/sportCar.png";
 import redPing from "../../public/assets/redPing.png";
 
 export const categoryData = [
-  { text: "football", img: soccer },
-  { text: "BasketBall", img: closeUpBasket },
-  { text: "Car Sport", img: sportCar },
-  { text: "Table Tennis", img: redPing },
+  { text: "football", img: [soccer, closeUpBasket] },
+  { text: "BasketBall", img: [closeUpBasket, soccer] },
+  { text: "Car Sport", img: [sportCar, redPing] },
+  { text: "Table Tennis", img: [redPing, sportCar] },
 ];

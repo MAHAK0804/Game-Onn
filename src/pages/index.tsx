@@ -4,9 +4,9 @@ import Image from "next/image";
 import Player from "../../public/assets/basketPlayer.png";
 import TodayImage from "@/components/TodayImage";
 import Category from "@/components/Category";
-import venunes from "../../public/assets/TrendingNews.png";
 import about from "../../public/assets/Aboutus.png";
 import Footer from "@/layouts/Footer";
+import Venues from "@/components/Venues";
 
 export default function Home() {
   return (
@@ -50,7 +50,7 @@ export default function Home() {
       <Category />
 
       {/* Venunes */}
-      <Image src={venunes} alt="venunes" className="w-[80%] m-auto mt-10" />
+      <Venues />
 
       {/* About us */}
       <Image src={about} alt="venunes" className="w-[80%] m-auto mt-10" />

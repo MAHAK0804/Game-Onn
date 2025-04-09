@@ -6,12 +6,12 @@ export default function CategoryBackSide({ categoryImg }: IBackSide) {
   return (
     <>
       {/* Back Side */}
-      <div className="absolute w-full h-full backface-hidden transform rotate-y-180">
+      <div className="absolute w-full h-full backface-hidden">
         <Image
           src={categoryImg}
           alt="soccer"
           fill
-          className="object-cover rounded-xl w-full sm:w-full md:w-[48%] lg:w-[24%]"
+          className="object-fill rounded-xl w-full sm:w-full md:w-[48%] lg:w-[24%]"
         />
       </div>
     </>
