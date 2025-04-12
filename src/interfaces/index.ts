@@ -25,3 +25,19 @@ export interface IVenueHost {
   heading: string;
   details: string;
 }
+export interface IVenue {
+  name: string;
+  rating: number;
+  loc: string;
+  distance: number;
+  cost: string;
+  time: string;
+}
+
+export interface IFilters {
+  location: string;
+  sport: string;
+  date: string;
+  timeSlot: string;
+  [x: string]: string;
+}

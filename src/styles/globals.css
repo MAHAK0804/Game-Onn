@@ -39,3 +39,15 @@ body {
 .backface-hidden {
   backface-visibility: hidden;
 }
+select {
+  appearance: none;
+  width: 100%;
+  padding: 2px;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 12px;
+  color: #333;
+}
+select-selected {
+  background-color: black;
+}

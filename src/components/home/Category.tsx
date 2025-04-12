@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { categoryData } from "@/constants/Category";
-import Image from "next/image";
+import CategoryFrontSide from "@/elements/CategoryFrontSide";
+import CategoryBackSide from "@/elements/CategoryBackSide";
 
 export default function Category() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -11,40 +12,37 @@ export default function Category() {
         <h4 className="text-[28px] bg-gradient-to-r from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text font-bold">
           Category
         </h4>
-        <div className="bg-gradient-to-r from-[#262626] to-[#B8C2CE] h-0.5 w-30 lg:ml-0 rounded-md mb-4"></div>
+        <div className="bg-gradient-to-r from-[#262626] to-[#B8C2CE] h-0.5 w-30 lg:ml-0 rounded-4xl mb-4"></div>
       </div>
 
       <div className="flex flex-wrap gap-2 justify-between w-full h-auto">
         {categoryData.map((cat, index) => {
-          const even = index % 2 === 0;
-          const isHovered = hoveredIndex === index;
+          const isEven = index % 2 !== 0;
 
           return (
             <div
               key={index}
-              className={`relative flex  gap-4 ${
-                even ? "flex-col" : "flex-col-reverse"
-              } w-full sm:w-full md:w-[48%] lg:w-[24%] h-[60vh]`}
+              className={`relative flex ${
+                isEven ? "lg:flex-col-reverse flex-col" : "flex-col"
+              } w-full sm:w-full md:w-[48%] gap-5 lg:w-[24%] mb-4 h-[75vh] perspective`}
             >
-              {/* Rotating Image Container */}
               <div
-                className={`relative w-full h-2/3 transition-transform duration-700 ${
-                  isHovered ? "rotate-y-180" : ""
+                className={`relative w-full h-[70%] transition-transform duration-700 transform-style preserve-3d ${
+                  hoveredIndex === index ? "rotate-y-180" : ""
                 }`}
               >
-                <Image
-                  src={isHovered ? cat.img[1] : cat.img[0]}
-                  alt="category"
-                  className="object-cover rounded-xl w-full h-full"
-                  width={0}
-                  height={0}
-                />
+                <div className="absolute w-full h-full backface-hidden">
+                  <CategoryFrontSide categoryImg={cat.img[0]} />
+                </div>
+                <div className="absolute w-full h-full rotate-y-180 backface-hidden">
+                  <CategoryBackSide categoryImg={cat.img[1]} />
+                </div>
               </div>
 
-              {/* Text Section */}
+              {/* Text below */}
               <div
-                className="w-full h-1/3 bg-gray-300 bg-opacity-90 text-white rounded-xl 
-                flex items-center justify-center text-center px-4"
+                className="w-full h-[25%] bg-gray-300 bg-opacity-90 text-white rounded-xl 
+            flex items-center justify-center text-center px-4 backface-hidden"
               >
                 <p
                   className="text-[24px] font-extrabold bg-gradient-to-b from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text uppercase cursor-pointer text-center"

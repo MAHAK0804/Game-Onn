@@ -7,7 +7,7 @@ export default function TodayImage() {
   return (
     <>
       <LabelText text="Trending" />
-      <div className="w-[80%] sm:m-auto  md:mt-3 md:m-auto px-4 md:px-6 lg:px-0 lg:flex lg:flex-col md:flex md:flex-row sm:flex sm:flex-col items-center md:items-start gap-6 md:gap-8">
+      <div className=" h-full  flex flex-col md:flex-row lg:flex-col gap-4 lg:gap-0  ">
         {trending.map((trend) => (
           <>
             <ImageLabels

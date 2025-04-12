@@ -1,7 +1,13 @@
 import React from "react";
+import Layout from "../Layout";
+import VenuesPage from "@/components/venues";
 
 const Venues = () => {
-  return <div>Venues</div>;
+  return (
+    <Layout>
+      <VenuesPage />
+    </Layout>
+  );
 };
 
 export default Venues;

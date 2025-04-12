@@ -6,15 +6,15 @@ import Category from "./Category";
 import Venues from "./Venues";
 import Player from "../../../public/assets/basketPlayer.png";
 import about from "../../../public/assets/Aboutus.png";
-import ContinueBtn from "@/elements/ContinueBtn";
+import SearchInputs from "./SearchInputs";
 
 const Home = () => {
   return (
-    <div className="w-full pt-20 border border-red-400">
+    <div className="w-full pt-10">
       {/* Top Section */}
-      <div className="flex flex-col lg:flex-row w-[90%]  m-auto min-h-screen sm:flex-wrap">
+      <div className="flex flex-col lg:flex-row w-[90%] m-auto min-h-screen sm:flex-wrap">
         {/* Left Section */}
-        <div className="flex flex-col w-full lg:w-2/3 h-auto">
+        <div className="flex  flex-col w-full lg:w-2/3 h-auto">
           {/* Text Area */}
           <div className="w-full h-auto lg:h-3/4">
             <div
@@ -48,30 +48,12 @@ const Home = () => {
         </div>
 
         {/* Right Side (TodayImage) */}
-        <div className=" w-[30%] md:pl-[70px] mt-10 lg:mt-0">
+        <div className="lg:ps-10 w-full lg:w-1/3 h-full  ">
           <TodayImage />
         </div>
       </div>
       {/* Search Section */}
-      <div className="w-[90%] m-auto flex flex-wrap shadow-xl border border-gray-50 mb-10 bg-gray-300 rounded-2xl p-10">
-        <div className="w-4/5 m-auto flex flex-wrap justify-between items-center bg-white rounded-2xl p-10">
-          <div className="w-[1/4] flex flex-row">
-            <input type="text" className="border p-2" />
-          </div>
-          <div className="w-[1/4]">
-            <input type="text" className="border" />
-          </div>
-          <div className="w-[1/4]">
-            <input type="text" className="border" />
-          </div>
-          <div className="w-[1/4]">
-            <input type="text" className="border" />
-          </div>
-        </div>
-        <div>
-          <ContinueBtn title="Search" />
-        </div>
-      </div>
+      <SearchInputs />
       {/* Category Section */}
       <Category />
 

@@ -4,7 +4,7 @@ import VenueGame from "@/elements/VenueGame";
 import VenueHost from "@/elements/VenueHost";
 import Image from "next/image";
 import React from "react";
-import ContinueBtn from "@/elements/ContinueBtn";
+import Btn from "@/elements/Btn";
 
 export default function Venues() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +45,7 @@ export default function Venues() {
                 height={250}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute top-2 lg:left-65 z-10">
+              <div className="absolute border border-green-800 text-center ml-2 top-2 lg:left-82 z-10">
                 <VenueGame title={venue.game} />
               </div>
               <VenueHost
@@ -58,20 +58,20 @@ export default function Venues() {
             </div>
           ))}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 mx-6">
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
             className=" py-1 rounded-2xl disabled:opacity-50 cursor-pointer"
           >
-            <ContinueBtn title="Prev" />
+            <Btn title="Prev" />
           </button>
           <button
             onClick={nextSlide}
             disabled={currentIndex + visibleCount >= venues.length}
             className=" py-1 rounded-4xl disabled:opacity-50 cursor-pointer"
           >
-            <ContinueBtn title="Next" />
+            <Btn title="Next" />
           </button>
         </div>
       </div>
