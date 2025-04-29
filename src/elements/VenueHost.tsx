@@ -10,16 +10,20 @@ export default function VenueHost({
   details,
 }: IVenueHost) {
   return (
-    <>
+    <div>
       <div className="flex flex-row gap-3 items-center p-4">
-        <Image src={img} alt="person" width={0} height={0} />
+        <div className="w-[10%] h-[10%]">
+          <Image src={img} alt="person" className="w-full h-full rounded-4xl" />
+        </div>
         <p>{name}</p>
       </div>
-      <div className="m-3 ">
+      <div className="mx-3 mb-5 ">
         <p className="text-[14px] text-[#26262699]">{date}</p>
-        <h3 className="text-[18px] font-medium text-[#262626] ">{heading}</h3>
-        <p className="text-[16px] text-[#696868] ">{details}</p>
+        <h3 className="text-[18px] font-medium text-[#262626] my-4 line-clamp-2 ">
+          {heading}
+        </h3>
+        <p className="text-[16px] text-[#696868] line-clamp-2 ">{details}</p>
       </div>
-    </>
+    </div>
   );
 }

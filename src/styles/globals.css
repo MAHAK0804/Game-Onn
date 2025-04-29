@@ -51,3 +51,10 @@ select {
 select-selected {
   background-color: black;
 }
+.slick-prev::before {
+  color: black !important;
+}
+.slick-next::before {
+  color: black !important;
+  /* background-color: red ; */
+}

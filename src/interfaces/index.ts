@@ -31,7 +31,6 @@ export interface IVenue {
   loc: string;
   distance: number;
   cost: string;
-  time: string;
 }
 
 export interface IFilters {

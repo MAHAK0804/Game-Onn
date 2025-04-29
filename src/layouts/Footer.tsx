@@ -29,12 +29,12 @@ const Footer = () => {
             <div className="p-3 flex flex-wrap gap-4">
               <input
                 type="email"
-                className="w-3/4 border border-gray-300 rounded-md text-gray-300 p-2"
+                className=" w-full md:w-1/2 lg:w-3/4 border border-gray-300 rounded-md text-gray-300 p-2"
                 placeholder="Enter Your Email Id"
               />
               <button
                 type="submit"
-                className="cursor-pointer border border-gray-300 rounded-md text-gray-300 p-2"
+                className="w-full md:w-1/4 cursor-pointer border border-gray-300 rounded-md text-gray-300 p-2"
               >
                 Subscribe
                 {/* <VenueGame title="Subscribe" /> */}
@@ -47,11 +47,11 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="w-full lg:w-14/25 flex flex-wrap gap-10">
+          <div className="w-full lg:w-14/25 flex flex-wrap flex-row gap-9 md:gap-10">
             {data2.map((el) => {
               return (
                 <>
-                  <div className="w-1/2 lg:w-1/4 p-2">
+                  <div className="w-2/5 md:w-1/4 lg:w-1/4 p-2">
                     <p className="text-[18px] font-sans-Roboto font-semibold text-white">
                       {el}
                     </p>
@@ -80,8 +80,8 @@ const Footer = () => {
           </div>
         </div>
         <div className=" border border-l-0 border-r-0 border-b-0 pb-0 p-3 border-t-gray-600 mt-5 flex flex-wrap justify-between gap-3 text-gray-200">
-          <p>2025 SportsNews.All right reserved</p>
-          <div className="flex flex-wrap list-none gap-3 ">
+          <p>2025 SportsNews. All right reserved</p>
+          <div className="flex flex-wrap list-none gap-5 ">
             {data.map((el) => (
               <>
                 <li className="border border-l-0 border-r-0 border-b-gray-600 border-t-0">

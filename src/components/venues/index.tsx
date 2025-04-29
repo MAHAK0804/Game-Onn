@@ -4,6 +4,7 @@ import { categoryData } from "@/constants/Category";
 import { timeSlots } from "@/constants/timeSlots";
 import { inputFIeld } from "@/constants/inputFields";
 import { IFilters } from "@/interfaces";
+import Banner from "@/elements/Banner";
 
 const VenuesPage = () => {
   const [filters, setFilters] = useState({} as IFilters);
@@ -14,9 +15,16 @@ const VenuesPage = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <>
-      <div className="w-[90%] m-auto mt-24  rounded-xl">
+      <Banner
+        video={
+          "https://videos.pexels.com/video-files/4307591/4307591-uhd_2560_1440_30fps.mp4"
+        }
+        text={"Where passion meets the pitch,and every cheer echoes greatness."}
+      />
+
+      <div className="w-[90%] m-auto mt-5 lg:mt-10  rounded-xl">
         {/* Filters  */}
-        <div className="bg-gray-100 p-4   rounded-2xl shadow-xl">
+        <div className=" p-4   rounded-2xl">
           {/* text icon */}
           <div className="flex flex-row  justify-between items-center">
             <p className="text-md pb-2 font-semibold">
@@ -47,7 +55,7 @@ const VenuesPage = () => {
                   <div className="flex flex-col relative w-full lg:w-1/4">
                     {/* Dropdown Trigger */}
                     <div
-                      className="flex items-center justify-between border border-gray-400 rounded-md p-2 cursor-pointer text-sm bg-white"
+                      className="flex items-center justify-between border border-gray-400 rounded-md p-2 cursor-pointer text-sm bg-white shadow-xl"
                       onClick={() =>
                         setDropDown(dropdown === item.name ? false : item.name)
                       }
@@ -60,7 +68,7 @@ const VenuesPage = () => {
 
                     {/* Dropdown List */}
                     {dropdown === item.name && (
-                      <div className="absolute z-10 mt-1 w-full border border-gray-300 bg-white rounded-md shadow-md max-h-40 overflow-y-auto">
+                      <div className="absolute z-10 mt-1 w-full border border-gray-300 bg-white rounded-md shadow-md max-h-40 overflow-y-auto shadow-xl">
                         {item.label === "Sport"
                           ? categoryData.map((el) => (
                               <div
@@ -97,7 +105,7 @@ const VenuesPage = () => {
                   // input type date
                   <>
                     {item.type == "date" ? (
-                      <div className=" w-full lg:w-1/4 border border-gray-400 rounded-md p-2 cursor-pointer text-sm">
+                      <div className=" w-full lg:w-1/4 border border-gray-400 rounded-md p-2 cursor-pointer text-sm bg-white shadow-xl">
                         <input
                           type={item.type}
                           className="focus: border-0 outline-0 w-full cursor-pointer"
@@ -113,7 +121,7 @@ const VenuesPage = () => {
                       </div>
                     ) : (
                       // input type text
-                      <div className="flex flex-row justify-between items-center w-full lg:w-1/4 border border-gray-400 rounded-md p-2 text-sm ">
+                      <div className="flex flex-row justify-between items-center w-full lg:w-1/4 border border-gray-400 rounded-md p-2 text-sm bg-white shadow-xl ">
                         <input
                           type={item.type}
                           className="focus: border-0 outline-0 w-full"

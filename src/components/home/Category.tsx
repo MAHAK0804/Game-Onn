@@ -7,11 +7,9 @@ export default function Category() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="w-[90%] m-auto mb-20">
+    <div className="w-[90%] m-auto mb-10 lg:mb-20">
       <div className="mb-2">
-        <h4 className="text-[28px] bg-gradient-to-r from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text font-bold">
-          Category
-        </h4>
+        <h4 className="text-[28px]  font-bold">Category</h4>
         <div className="bg-gradient-to-r from-[#262626] to-[#B8C2CE] h-0.5 w-30 lg:ml-0 rounded-4xl mb-4"></div>
       </div>
 
@@ -27,7 +25,7 @@ export default function Category() {
               } w-full sm:w-full md:w-[48%] gap-5 lg:w-[24%] mb-4 h-[75vh] perspective`}
             >
               <div
-                className={`relative w-full h-[70%] transition-transform duration-700 transform-style preserve-3d ${
+                className={`relative w-full h-[73%] transition-transform duration-700 transform-style preserve-3d ${
                   hoveredIndex === index ? "rotate-y-180" : ""
                 }`}
               >
@@ -42,13 +40,11 @@ export default function Category() {
               {/* Text below */}
               <div
                 className="w-full h-[25%] bg-gray-300 bg-opacity-90 text-white rounded-xl 
-            flex items-center justify-center text-center px-4 backface-hidden"
+            flex items-center justify-center text-center px-4 backface-hidden cursor-pointer"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                <p
-                  className="text-[24px] font-extrabold bg-gradient-to-b from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text uppercase cursor-pointer text-center"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
+                <p className="text-[24px] font-extrabold bg-gradient-to-b from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text uppercase text-center">
                   {cat.text}
                 </p>
               </div>

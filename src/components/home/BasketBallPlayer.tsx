@@ -9,7 +9,7 @@ export default function BasketBallPlayer() {
         className="
       px-4
       sm:w-[80%] 
-      md:w-[80%] md:ml-auto 
+      md:w-[90%] md:ml-auto 
       lg:w-[45%] lg:ml-auto
     "
       >

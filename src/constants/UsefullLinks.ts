@@ -1,5 +1,5 @@
 export const links = {
-  UseFulllinks: [
+  UsefullLinks: [
     { id: 1, text: "About Us" },
     { id: 2, text: "Contact" },
     { id: 3, text: "Venues" },

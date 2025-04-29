@@ -6,9 +6,10 @@ import Category from "./Category";
 import Venues from "./Venues";
 import Player from "../../../public/assets/basketPlayer.png";
 import about from "../../../public/assets/Aboutus.png";
-import SearchInputs from "./SearchInputs";
 
 const Home = () => {
+  // const authState = useSelector((state) => state.auth.authState);
+
   return (
     <div className="w-full pt-10">
       {/* Top Section */}
@@ -19,11 +20,12 @@ const Home = () => {
           <div className="w-full h-auto lg:h-3/4">
             <div
               className="bg-[url(/assets/bgImg.png)] bg-cover bg-center bg-repeat-x relative w-full lg:max-w-[700px] max-w-[900px]
-    h-auto aspect-[7/6] lg:left-[-60px] left-1 mb-10"
+              h-auto aspect-[7/6] lg:left-[-60px] left-1 mb-10"
             >
-              <h1 className="lg:ml-15 lg:pt-40 pt-7 ml-5 lg:text-[75px] text-[55px] font-extrabold bg-gradient-to-b lg:leading-20 leading-17 from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text uppercase text-start">
+              <h1 className="md:ml-15 md:pt-40 pt-7  ml-2 lg:ml-5 md:text-[75px] text-[55px] font-extrabold bg-gradient-to-b lg:leading-20 leading-17 from-[#262626] to-[#B8C2CE] text-transparent bg-clip-text uppercase text-start">
                 Top scorer to the final match
               </h1>
+              {/* {authState ? "Logged  In" : "Logged Out"} */}
             </div>
           </div>
 
@@ -52,8 +54,7 @@ const Home = () => {
           <TodayImage />
         </div>
       </div>
-      {/* Search Section */}
-      <SearchInputs />
+
       {/* Category Section */}
       <Category />
 

@@ -3,11 +3,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import Sports from "../../public/assets/sportNews.png";
+import Btn from "@/elements/Btn";
 // import { FaBars, FaTimes } from "react-icons/fa"; // Add icons
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   console.log(isOpen);
@@ -42,7 +42,7 @@ const Header = () => {
           <ul
             className={`${
               isOpen ? "flex" : "hidden lg:flex"
-            } flex-col my-4 lg:my-0 lg:flex-row gap-3 lg:gap-5`}
+            } flex-col justify-between lg:items-center my-4 lg:my-0 lg:flex-row gap-3 lg:gap-5`}
           >
             {headerLinks.map((link) => (
               <li key={link.route}>
@@ -50,7 +50,7 @@ const Header = () => {
                   href={link.route}
                   className=" text-md font-bold text-start font-sans:DM"
                 >
-                  {link.name}
+                  {link.name == "Login" ? <Btn title={link.name} /> : link.name}
                 </Link>
               </li>
             ))}

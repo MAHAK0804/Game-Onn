@@ -21,4 +21,8 @@ export const headerLinks: IHeaderLink[] = [
     name: "Contact Us",
     route: "/contact-us",
   },
+  {
+    name: "Login",
+    route: "/login",
+  },
 ];
