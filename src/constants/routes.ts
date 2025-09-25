@@ -5,10 +5,10 @@ export const headerLinks: IHeaderLink[] = [
     name: "Home",
     route: "/",
   },
-  {
-    name: "Categories",
-    route: "/categories",
-  },
+  // {
+  //   name: "Categories",
+  //   route: "/categories",
+  // },
   {
     name: "Venues",
     route: "/venues",
@@ -19,10 +19,10 @@ export const headerLinks: IHeaderLink[] = [
   },
   {
     name: "Contact Us",
-    route: "/contact-us",
+    route: "/about-us/#contact-us",
   },
-  {
-    name: "Login",
-    route: "/login",
-  },
+  // {
+  //   name: "Login",
+  //   route: "/login",
+  // },
 ];

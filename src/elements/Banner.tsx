@@ -1,13 +1,25 @@
 import React from "react";
+
 type BannerProps = {
   video: string;
   text: string;
 };
 
 export default function Banner({ video, text }: BannerProps) {
+  const isVenueText =
+    text ===
+    "Increase your visibility and reach New Audiences by posting your venue on our unique platform, reaching directly to avid players";
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <div className="absolute w-full h-full bg-black opacity-25 top-0 left-0 z-2"></div>
+    <div className={`${isVenueText ? "h-[60vh]" : "h-screen"} relative w-full`}>
+      {/* Overlay */}
+      <div
+        className={`absolute top-0 left-0 w-full ${
+          isVenueText ? "h-[60vh]" : "h-full"
+        } bg-black opacity-50`}
+      />
+
+      {/* Background Video */}
       <video
         autoPlay
         loop
@@ -17,13 +29,18 @@ export default function Banner({ video, text }: BannerProps) {
       >
         <source src={video} type="video/mp4" />
       </video>
-      <div className="absolute w-full h-full top:10 lg:top-50 left-0 z-3">
-        <h1 className=" text-4xl mx-5 lg:text-6xl text-white font-extrabold lg:w-[50%] lg:m-auto text-center pt-60 lg:pt-20 leading-13 lg:leading-18">
+
+      {/* Text Block */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <h1
+          className={`text-2xl mx-5 text-white text-center lg:w-[50%] ${
+            isVenueText
+              ? "lg:text-4xl leading-9 lg:leading-[3rem] font-semibold"
+              : "lg:text-6xl leading-[3.25rem] lg:leading-[4.5rem] font-extrabold"
+          }`}
+        >
           {text}
         </h1>
-        <div className="w-[50%] m-auto text-7xl text-white text-center mt-30 lg:mt-40 cursor-pointer">
-          <i className="fa-solid fa-chevron-down"></i>
-        </div>
       </div>
     </div>
   );

@@ -5,11 +5,8 @@ import TodayImage from "./TodayImage";
 import Category from "./Category";
 import Venues from "./Venues";
 import Player from "../../../public/assets/basketPlayer.png";
-import about from "../../../public/assets/Aboutus.png";
 
 const Home = () => {
-  // const authState = useSelector((state) => state.auth.authState);
-
   return (
     <div className="w-full pt-10">
       {/* Top Section */}
@@ -60,15 +57,6 @@ const Home = () => {
 
       {/* Venunes */}
       <Venues />
-
-      {/* About us */}
-      <Image
-        src={about}
-        alt="venunes"
-        width={0}
-        height={0}
-        className="w-[90%] m-auto mt-10"
-      />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import ContinueBtn from "@/elements/ContinueBtn";
+// import ContinueBtn from "@/elements/ContinueBtn";
 
 export default function BasketBallPlayer() {
   return (
@@ -17,7 +17,7 @@ export default function BasketBallPlayer() {
           The EuroLeague Finals Top Scorer is the individual award for the
           player that gained the highest points in the EuroLeague Finals.
         </p>
-        <ContinueBtn title="Continue Reading" />
+        {/* <ContinueBtn title="Continue Reading" /> */}
       </div>
     </div>
   );

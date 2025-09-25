@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import Layout from "../Layout";
-import VenueData from "@/components/venues/VenueData";
-import { details } from "@/constants/venuesDetails";
+import VenuesDetailsData from "@/components/venues/VenuesDetails";
+import { DETAILS } from "@/constants/app.constants";
 
 const VenueDetails = () => {
   const { id } = useRouter().query;
 
-  const data = details.find((el) => el.id.toString() === id);
+  const data = DETAILS.find((el) => el.id.toString() === id);
   console.log("data", data);
 
   if (!data) {
@@ -19,7 +19,8 @@ const VenueDetails = () => {
 
   return (
     <Layout>
-      <VenueData data={data} />
+      {/* <VenueData data={data} /> */}
+      <VenuesDetailsData data={data} />
     </Layout>
   );
 };

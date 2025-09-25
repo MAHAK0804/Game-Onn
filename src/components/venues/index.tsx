@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import VenuesCard from "./VenuesCard";
-import { categoryData } from "@/constants/Category";
-import { timeSlots } from "@/constants/timeSlots";
-import { inputFIeld } from "@/constants/inputFields";
 import { IFilters } from "@/interfaces";
 import Banner from "@/elements/Banner";
+import { CalenderDate } from "@/elements/DatePicker";
+import VenuesListing from "./VenuesListing";
+import { INPUT_FIELDS, SPORTS, TIMESLOTS } from "@/constants/app.constants";
 
 const VenuesPage = () => {
   const [filters, setFilters] = useState({} as IFilters);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdown, setDropDown] = useState<boolean | null | string>(null);
-  console.log(dropdown);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <>
+    <div>
       <Banner
         video={
           "https://videos.pexels.com/video-files/4307591/4307591-uhd_2560_1440_30fps.mp4"
@@ -31,6 +30,18 @@ const VenuesPage = () => {
               Filters
               {/* <i className="fa-solid fa-filter ml-1 hidden lg:visible"></i> */}
             </p>
+            <button
+              className={`  ${
+                isOpen ? "block" : "hidden lg:block"
+              } cursor-pointer`}
+              onClick={() => {
+                console.log("clear");
+
+                setFilters({} as IFilters);
+              }}
+            >
+              <p>Clear Filters</p>
+            </button>
             <button className="lg:hidden" onClick={toggleMenu}>
               <i
                 className={`  ${
@@ -47,15 +58,15 @@ const VenuesPage = () => {
             } flex-col  lg:flex-row justify-between items-center gap-4`}
           >
             {/* input fields */}
-            {inputFIeld.map((item) => (
+            {INPUT_FIELDS.map((item, index) => (
               <>
                 {/* input type-select */}
 
                 {item.type === "select" ? (
-                  <div className="flex flex-col relative w-full lg:w-1/4">
+                  <div key={index} className="flex flex-col  w-full lg:w-1/4">
                     {/* Dropdown Trigger */}
                     <div
-                      className="flex items-center justify-between border border-gray-400 rounded-md p-2 cursor-pointer text-sm bg-white shadow-xl"
+                      className="flex items-center justify-between border border-gray-400 rounded-md p-3 cursor-pointer text-sm bg-white shadow-xl"
                       onClick={() =>
                         setDropDown(dropdown === item.name ? false : item.name)
                       }
@@ -68,24 +79,24 @@ const VenuesPage = () => {
 
                     {/* Dropdown List */}
                     {dropdown === item.name && (
-                      <div className="absolute z-10 mt-1 w-full border border-gray-300 bg-white rounded-md shadow-md max-h-40 overflow-y-auto shadow-xl">
+                      <div className="absolute z-10 mt-13 w-full lg:w-1/5 border border-gray-300 bg-white rounded-md  max-h-40 overflow-y-auto shadow-xl">
                         {item.label === "Sport"
-                          ? categoryData.map((el) => (
+                          ? SPORTS.map((el) => (
                               <div
-                                key={el.text}
+                                key={el}
                                 onClick={() => {
                                   setFilters({
                                     ...filters,
-                                    [item.name]: el.text,
+                                    [item.name]: el,
                                   });
                                   setDropDown(false);
                                 }}
                                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                               >
-                                {el.text}
+                                {el}
                               </div>
                             ))
-                          : timeSlots.map((slot, index) => (
+                          : TIMESLOTS.map((slot, index) => (
                               <div
                                 key={index}
                                 onClick={() => {
@@ -101,32 +112,28 @@ const VenuesPage = () => {
                     )}
                   </div>
                 ) : (
-                  // handle date/text inputs...
                   // input type date
                   <>
-                    {item.type == "date" ? (
-                      <div className=" w-full lg:w-1/4 border border-gray-400 rounded-md p-2 cursor-pointer text-sm bg-white shadow-xl">
-                        <input
-                          type={item.type}
-                          className="focus: border-0 outline-0 w-full cursor-pointer"
-                          placeholder={item.label}
-                          // value={location}
-                          onChange={(e) =>
-                            setFilters({
-                              ...filters,
-                              [item.name]: e.target.value,
-                            })
-                          }
-                        />
-                      </div>
+                    {item.type === "date" ? (
+                      // <>
+                      <CalenderDate
+                        item={item}
+                        filters={filters}
+                        setFilters={setFilters}
+                      />
                     ) : (
                       // input type text
-                      <div className="flex flex-row justify-between items-center w-full lg:w-1/4 border border-gray-400 rounded-md p-2 text-sm bg-white shadow-xl ">
+                      <div
+                        className="flex flex-row justify-between items-center w-full lg:w-1/4 border border-gray-400 rounded-md p-2 text-sm bg-white shadow-xl cursor-pointer"
+                        onClick={() => {
+                          console.log("input");
+                        }}
+                      >
                         <input
                           type={item.type}
-                          className="focus: border-0 outline-0 w-full"
+                          className="focus:border-0 outline-0 p-1 w-full"
                           placeholder={item.label}
-                          // value={location}
+                          value={filters[item.name] || ""}
                           onChange={(e) =>
                             setFilters({
                               ...filters,
@@ -144,9 +151,9 @@ const VenuesPage = () => {
           </div>
         </div>
         {/* Vennue Cards */}
-        <VenuesCard filters={filters} />
+        <VenuesListing filters={filters} />
       </div>
-    </>
+    </div>
   );
 };
 

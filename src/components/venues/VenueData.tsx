@@ -3,11 +3,8 @@ import React, { ReactNode } from "react";
 
 import Image, { StaticImageData } from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Book from "@/elements/Book";
 import Banner from "@/elements/Banner";
-// import footballground1 from "../../../public/assets/football_ground1.webp";
-// import footballground2 from "../../../public/assets/footballground2.jpg";
-// import cicketgd from "../../../public/assets/circketgd.jpg";
+import Btn from "@/elements/Btn";
 
 type VenueType = {
   distance: number;
@@ -64,7 +61,7 @@ export default function VenueData({ data }: { data: VenueType }) {
                 : `${data.distance} kms`}{" "}
               away from location
             </p>
-            <Book title="Book Venue" />
+            <Btn title="Book Venue" />
           </div>
           <div className="w-full  lg:w-1/5 flex flex-col gap-2">
             <div className="text-xl font-bold p-2 lg:p-5">

@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Layout from "../Layout";
+import AboutPage from "@/components/aboutUs";
 
 export default function AboutUs() {
-  return <div>About US</div>;
+  useEffect(() => {
+    document.title = "About Us";
+  }, []);
+  return (
+    <Layout>
+      <AboutPage />
+    </Layout>
+  );
 }

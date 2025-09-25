@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { categoryData } from "@/constants/Category";
 import CategoryFrontSide from "@/elements/CategoryFrontSide";
 import CategoryBackSide from "@/elements/CategoryBackSide";
+import { CATEGORY_DATA } from "@/constants/app.constants";
 
 export default function Category() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -14,7 +14,7 @@ export default function Category() {
       </div>
 
       <div className="flex flex-wrap gap-2 justify-between w-full h-auto">
-        {categoryData.map((cat, index) => {
+        {CATEGORY_DATA.map((cat, index) => {
           const isEven = index % 2 !== 0;
 
           return (
