@@ -1,4 +1,3 @@
-import { sportIcons } from "@/constants/app.constants";
 import { StaticImageData } from "next/image";
 
 export interface IHeaderLink {
@@ -117,7 +116,7 @@ export interface VenueType {
   timeSlots: timeSlots[];
   price: VenuePriceDetails;
   status: string;
-  sport: keyof typeof sportIcons;
+  sport: string;
 }
 export interface VenuePriceDetails {
   subTotal: number;
