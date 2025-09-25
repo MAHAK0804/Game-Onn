@@ -27,7 +27,7 @@ export default function Booking() {
   const handleOpen = (id: number | string) => setOpenVenueId(id);
   const handleClose = () => setOpenVenueId(null);
 
-  const drawerData: VenueType = VENUES_HISTORY.find(
+  const drawerData: VenueType | undefined = VENUES_HISTORY.find(
     (el) => el.id === openVenueId
   );
   console.log("venueID", openVenueId);
