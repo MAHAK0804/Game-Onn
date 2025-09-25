@@ -1,4 +1,4 @@
-import { sportIcons, statusColors } from "@/constants/app.constants";
+import { sportIcons } from "@/constants/app.constants";
 import { StaticImageData } from "next/image";
 
 export interface IHeaderLink {
@@ -107,7 +107,7 @@ export interface IContactUs {
   emailId: string;
   message: string;
 }
-
+export type VenueStatus = "Booked" | "Visited" | "Cancelled";
 export interface VenueType {
   id: number | string;
   image: StaticImageData;
@@ -116,7 +116,7 @@ export interface VenueType {
   date: string;
   timeSlots: timeSlots[];
   price: VenuePriceDetails;
-  status: keyof typeof statusColors;
+  status: VenueStatus;
   sport: keyof typeof sportIcons;
 }
 export interface VenuePriceDetails {
