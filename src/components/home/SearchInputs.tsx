@@ -4,7 +4,8 @@ import loc from "../../../public/assets/map-2.png";
 import Image from "next/image";
 import React from "react";
 import Btn from "@/elements/Btn";
-import { categoryData } from "@/constants/Category";
+import { CATEGORY_DATA } from "@/constants/app.constants";
+// import { categoryData } from "@/constants/Category";
 
 const SearchInputs = () => {
   return (
@@ -18,11 +19,41 @@ const SearchInputs = () => {
             <h5 className="text-[14px] ">Games</h5>
             <select className="p-2 w-full">
               <option value="Select Sport">Select</option>
-              {categoryData.map((el) => (
-                <>
-                  <option value={`${el.text}`}>{el.text}</option>
-                </>
-              ))}
+              {CATEGORY_DATA.map(
+                (el: {
+                  text:
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | React.ReactElement<
+                        unknown,
+                        string | React.JSXElementConstructor<unknown>
+                      >
+                    | Iterable<React.ReactNode>
+                    | React.ReactPortal
+                    | Promise<
+                        | string
+                        | number
+                        | bigint
+                        | boolean
+                        | React.ReactPortal
+                        | React.ReactElement<
+                            unknown,
+                            string | React.JSXElementConstructor<unknown>
+                          >
+                        | Iterable<React.ReactNode>
+                        | null
+                        | undefined
+                      >
+                    | null
+                    | undefined;
+                }) => (
+                  <>
+                    <option value={`${el.text}`}>{el.text}</option>
+                  </>
+                )
+              )}
             </select>
           </div>
         </div>

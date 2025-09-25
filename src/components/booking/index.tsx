@@ -60,7 +60,11 @@ export default function Booking() {
                 className="object-cover"
               />
               <div className="absolute top-2 left-2 bg-amber-600 text-white text-sm p-2 rounded-full shadow">
-                <i className={`${sportIcons[venue.sport]}`}></i>
+                <i
+                  className={`${
+                    sportIcons[venue.sport as keyof typeof sportIcons]
+                  }`}
+                ></i>
               </div>
             </div>
 
@@ -81,7 +85,7 @@ export default function Booking() {
             <div>
               <span
                 className={`inline-block px-4 py-1 text-sm font-semibold rounded-full ${
-                  statusColors[venue.status]
+                  statusColors[venue.status as keyof typeof statusColors]
                 }`}
               >
                 {venue.status}
@@ -175,7 +179,7 @@ export default function Booking() {
               {drawerData?.status && (
                 <span
                   className={`inline-block px-4 py-1 text-sm font-semibold rounded-full ${
-                    statusColors[drawerData.status]
+                    statusColors[drawerData.status as keyof typeof statusColors]
                   } w-fit`}
                 >
                   {drawerData.status}
