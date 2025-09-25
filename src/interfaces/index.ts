@@ -131,6 +131,6 @@ export interface timeSlots {
   court: string;
   date: string;
   time: string;
-  checkIn: "4:00 PM";
-  checkOut: "5:00 PM";
+  checkIn: string;
+  checkOut: string;
 }
