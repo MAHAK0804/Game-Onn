@@ -116,7 +116,7 @@ export interface VenueType {
   date: string;
   timeSlots: timeSlots[];
   price: VenuePriceDetails;
-  status: VenueStatus;
+  status: string;
   sport: keyof typeof sportIcons;
 }
 export interface VenuePriceDetails {
